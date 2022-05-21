@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron text-center bottom-bottom">
+        <h1 class="display-4">Mission to Mars</h1>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+      </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <h1>Latest Mars News</h1>
+        <p>{{mars.news_title}}</p>
+        <p>{{mars.news_p}}</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <h1>Featured Mars Image</h1>
+        <img src="{{mars['featured_image']}}" alt="featured mars image">
+        <h2>Mars Facts</h2>
+        <table border="1" class="dataframe table table-striped">
+            <thead>
+            <tr style="text-align: right;">
+                <th>Description</th>
+                <th>Mars Value</th>
+                <th>Earth Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Mars - Earth Comparison</td>
+                <td>Mars</td>
+                <td>Earth</td>
+            </tr>
+            <tr>
+                <td>Diameter:</td>
+                <td>6,779 km</td>
+                <td>12,742 km</td>
+            </tr>
+            <tr>
+                <td>Mass:</td>
+                <td>6.39 × 10^23 kg</td>
+                <td>5.97 × 10^24 kg</td>
+            </tr>
+            <tr>
+                <td>Moons:</td>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Distance from Sun:</td>
+                <td>227,943,824 km</td>
+                <td>149,598,262 km</td>
+            </tr>
+            <tr>
+                <td>Length of Year:</td>
+                <td>687 Earth days</td>
+                <td>365.24 days</td>
+            </tr>
+            <tr>
+                <td>Temperature:</td>
+                <td>-87 to -5 °C</td>
+                <td>-88 to 58°C</td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>Mars Hemispheres</h1>
+        <div class="row">
+            {% for img in mars.mars_hemisphere %}
+              <div class="col-6 border">
+              </br>
+                    <div>
+                      <img width="512 px" height="512 px" src="{{img.img_url}}
+                      ">
+                    </div>
+                    <div>
+                      <h4> {{img.title}} </h4>
+                    </div>
+              </div>
+            {% endfor %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
